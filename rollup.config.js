@@ -1,9 +1,6 @@
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import builtins from 'rollup-plugin-node-builtins';
-import globals from 'rollup-plugin-node-globals';
 
 let plugins = [
   babel({
@@ -11,58 +8,46 @@ let plugins = [
     presets: ['es2015-rollup'],
     exclude: 'node_modules/**',
   }),
-  nodeResolve({ browser: true, jsnext: true }),
-  commonjs(),
-  builtins(),
-  globals()
+  commonjs()
 ];
 
 let prodPlugins = [uglify(), ...plugins];
 
-export default {
+export default [{
   entry: 'index.js',
   input: 'index.js',
   output: [
     {
+      file: 'dist/polite-pouch-es5.js',
+      format: 'iife',
+      name: 'politePouch',
+      globals: {
+        'uuid/v5': 'uuid/v5',
+        crypto: 'crypto'
+      }
+    },
+    {
       file: 'dist/polite-pouch-es6.js',
       format: 'es',
-      name: 'politePouch',
-      external: ['uuid', 'crypto', 'PouchDB']
-    },
-    {
-      file: 'dist/polite-pouch-es5.js',
-      format: 'iife',
-      name: 'politePouch',
-      external: ['uuid', 'crypto', 'PouchDB']
+      name: 'politePouch'
     }
   ],
-  plugins
-};
-/*
-export default [{
-  input: 'index.js',
-  output: [
-    {
-      file: 'dist/polite-pouch-es6.js',
-      format: 'es6',
-      moduleName: 'politePouch'
-    },
-    {
-      file: 'dist/polite-pouch-es5.js',
-      format: 'iife',
-      moduleName: 'politePouch'
-    }
-  ],
+  external: ['uuid', 'uuid/v5', 'crypto', 'PouchDB'],
   plugins
 }, {
+  entry: 'index.js',
   input: 'index.js',
   output: [
     {
       file: 'dist/polite-pouch.min.js',
       format: 'iife',
-      moduleName: 'politePouch'
+      name: 'politePouch',
+      globals: {
+        'uuid/v5': 'uuid/v5',
+        crypto: 'crypto'
+      }
     }
   ],
-  prodPlugins
+  external: ['uuid', 'uuid/v5', 'crypto', 'PouchDB'],
+  plugins: prodPlugins
 }];
-*/

@@ -17,7 +17,6 @@
     "build": "rollup --config ./build/rollup.client.config.js"
   },
   "dependencies": {
-    "crypto": "^1.0.1",
     "pouchdb": "^6.4.2",
     "uuid": "^3.2.1"
   },
@@ -29,9 +28,6 @@
     "rollup": "^0.55.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.3.0",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-globals": "^1.1.0",
-    "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-uglify": "^3.0.0"
   }
 }
