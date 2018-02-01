@@ -62,7 +62,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  *
  * @param  {PouchDB}  {REQUIRED} db       Reference to PouchDB
  * @param  {Object}   {REQUIRED} doc      The object to be added to the db
- * @param  {String}   {OPTIONAL} prefix   optional id prefix
+ * @param  {String}   {OPTIONAL} prefix   Optional id prefix
  * @return {Promise}
  */
 function addOne(db, doc, prefix) {
@@ -111,7 +111,7 @@ function addOne(db, doc, prefix) {
  *
  * @param  {PouchDB}  {REQUIRED} db       Reference to PouchDB
  * @param  {Array}    {REQUIRED} docs     The object to be added to the db
- * @param  {String}   {OPTIONAL} prefix   optional id prefix
+ * @param  {String}   {OPTIONAL} prefix   Optional id prefix
  * @return {Promise}
  */
 function addMany(db, docs, prefix) {
@@ -158,7 +158,7 @@ function addMany(db, docs, prefix) {
  *
  * @param  {PouchDB}      {REQUIRED} db       Reference to PouchDB
  * @param  {Object|Array} {REQUIRED} objects  The object or objects to be added to the db
- * @param  {String}       {OPTIONAL} prefix   optional id prefix
+ * @param  {String}       {OPTIONAL} prefix   Optional id prefix
  * @return {Promise}
  */
 function pleaseAdd(objects, prefix) {
@@ -188,7 +188,7 @@ function isntDesignDoc(row) {
  *
  * @param  {Function} {OPTIONAL} filter   Function returning `true` for any object
  *                                        to be returned.
- * @param  {String}   {OPTIONAL} prefix   optional id prefix
+ * @param  {String}   {OPTIONAL} prefix   Optional id prefix
  * @return {Promise}
  */
 function pleaseFindAll(filter, prefix) {
@@ -227,7 +227,7 @@ function toId(idOrObject) {
  *
  * @param  {PouchDB}       {REQUIRED} db         Reference to PouchDB
  * @param  {String|Object} {REQUIRED} idOrObject An array of ids or objects
- * @param  {String}        {OPTIONAL} prefix     optional id prefix
+ * @param  {String}        {OPTIONAL} prefix     Optional id prefix
  * @return {Promise}
  */
 function findOne(db, idOrObject, prefix) {
@@ -257,7 +257,7 @@ function findOne(db, idOrObject, prefix) {
  *
  * @param  {PouchDB}  {REQUIRED} db           Reference to PouchDB
  * @param  {Array}    {REQUIRED} idsOrObjects An array of ids or objects
- * @param  {String}   {OPTIONAL} prefix       optional id prefix
+ * @param  {String}   {OPTIONAL} prefix       Optional id prefix
  * @return {Promise}
  */
 function findMany(db, idsOrObjects, prefix) {

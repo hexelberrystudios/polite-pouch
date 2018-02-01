@@ -10,6 +10,7 @@ import {pleaseUpdate} from './lib/update';
 /**
  * This is a thin wrapper over the PouchDB API to automatically
  * handle id and timestamps.
+ * @private
  */
 export const politePouch = {
   pleaseAdd,
@@ -20,14 +21,3 @@ export const politePouch = {
   pleaseRemove,
   pleaseUpdate
 };
-
-/*
-
-Example:
-var politePouch = { pleaseFindAll : function() { ... } };
-
-var PouchDB = require('pouchdb').plugin(politePouch);
-
-var db = new PouchDB('foobar');
-db.pleaseFindAll(); // returns all
-*/

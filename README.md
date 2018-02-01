@@ -17,3 +17,13 @@ db.pleaseFindAll(); // returns all data
 ## Installation
 
     npm install --save polite-pouch
+
+## Documentation
+
+[API](API.md)
+
+## License
+
+MIT License
+
+Copyright (c) 2018 Hexelberry Studios
